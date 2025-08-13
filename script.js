@@ -34,18 +34,21 @@ initAccordion();
 
 // ###################################################
 
-const menu = document.querySelectorAll('.menu ul li a[href^="#"]')
-const getLinks = document.querySelectorAll('[id]')
+function initScrollSuave() {
+    const menu = document.querySelectorAll('.menu ul li a[href^="#"]')
+    const getLinks = document.querySelectorAll('[id]')
 
-menu.forEach((link, index) => {
+    menu.forEach((link, index) => {
 
-    link.addEventListener('click', () => {
-        let getHeight = getLinks[index].offsetTop
+        link.addEventListener('click', () => {
+            let getHeight = getLinks[index].offsetTop
 
-        window.scrollBy({
-            top: getHeight,
-            left: 0,
-            behavior: "smooth"
+            window.scrollBy({
+                top: getHeight,
+                left: 0,
+                behavior: "smooth"
+            })
         })
     })
-})
+}
+initScrollSuave();
