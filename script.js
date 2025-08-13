@@ -33,16 +33,19 @@ function initAccordion() {
 initAccordion();
 
 // ###################################################
-const menuContato = document.querySelector('.menuContato')
-// console.log(tagContato)
-const tagContato = document.querySelector('.contato').offsetTop;
 
-menuContato.addEventListener('click', () => {
-    window.scrollBy({
-        top: tagContato,
-        left: 0,
-        behavior: "smooth"
-    });
+const menu = document.querySelectorAll('.menu ul li a[href^="#"]')
+const getLinks = document.querySelectorAll('[id]')
+
+menu.forEach((link, index) => {
+
+    link.addEventListener('click', () => {
+        let getHeight = getLinks[index].offsetTop
+
+        window.scrollBy({
+            top: getHeight,
+            left: 0,
+            behavior: "smooth"
+        })
+    })
 })
-
-// console.log(sectionContato.offsetTop)
